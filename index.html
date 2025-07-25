@@ -1,0 +1,130 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>English Exam Simulation - CIDEX Level 1</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #1a1a2e;
+      color: #fff;
+      padding: 20px;
+      margin: 0;
+    }
+
+    h1 {
+      text-align: center;
+      color: #00ffcc;
+      margin-bottom: 10px;
+    }
+
+    .audio-section {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .flashcard-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 20px;
+    }
+
+    .flashcard {
+      background-color: #16213e;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 255, 170, 0.2);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .flashcard:hover {
+      transform: scale(1.02);
+    }
+
+    .step {
+      display: none;
+      margin-top: 15px;
+      background-color: #0f3460;
+      padding: 10px;
+      border-left: 4px solid #00ffcc;
+      border-radius: 6px;
+    }
+
+    .visible {
+      display: block;
+    }
+
+    .step span {
+      font-weight: bold;
+      margin-right: 5px;
+    }
+
+    .question { color: #ffcc00; }
+    .answer { color: #00ff99; }
+    .explanation { color: #66ccff; }
+    .example { color: #ccccff; }
+  </style>
+</head>
+<body>
+  <h1>✅ CIDEX English Listening Practice – Level 1 (Simulated Flashcards)</h1>
+
+  <div class="audio-section">
+    <p>🔊 Listen to the official audio before answering the flashcards:</p>
+    <audio controls>
+      <source src="ca-audio-prova-1.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+  </div>
+
+  <div class="flashcard-container">
+    <div class="flashcard" onclick="showNextStep(this)">
+      <div class="step visible"><span class="question">❓ Question 01:</span> The man cooks the same thing every day.</div>
+      <div class="step"><span class="answer">✅ Answer:</span> (B) FALSE</div>
+      <div class="step"><span class="explanation">🟢 Explanation:</span> He varies his meals and doesn’t cook the same thing daily.</div>
+      <div class="step"><span class="example">🔵 Example:</span> "I like variety," he says. "Some days I make pasta, others I make soup."</div>
+    </div>
+
+    <div class="flashcard" onclick="showNextStep(this)">
+      <div class="step visible"><span class="question">❓ Question 02:</span> The man hates vegetables.</div>
+      <div class="step"><span class="answer">✅ Answer:</span> (A) TRUE</div>
+      <div class="step"><span class="explanation">🟢 Explanation:</span> He mentions strongly disliking the taste of vegetables.</div>
+      <div class="step"><span class="example">🔵 Example:</span> He says, "I can't eat broccoli or spinach—disgusting!"</div>
+    </div>
+
+    <div class="flashcard" onclick="showNextStep(this)">
+      <div class="step visible"><span class="question">❓ Question 03:</span> The man eats one apple, two bananas, and one orange every day.</div>
+      <div class="step"><span class="answer">✅ Answer:</span> (B) FALSE</div>
+      <div class="step"><span class="explanation">🟢 Explanation:</span> His routine includes some fruit but not in that exact combination.</div>
+      <div class="step"><span class="example">🔵 Example:</span> He might say: “I eat an apple and sometimes grapes, not always bananas.”</div>
+    </div>
+
+    <div class="flashcard" onclick="showNextStep(this)">
+      <div class="step visible"><span class="question">❓ Question 04:</span> Where is Marcel from?</div>
+      <div class="step"><span class="answer">✅ Answer:</span> (C) He is from France.</div>
+      <div class="step"><span class="explanation">🟢 Explanation:</span> He introduces himself and says he is French.</div>
+      <div class="step"><span class="example">🔵 Example:</span> Marcel says, "Bonjour! I'm Marcel, from Paris, France."</div>
+    </div>
+
+    <div class="flashcard" onclick="showNextStep(this)">
+      <div class="step visible"><span class="question">❓ Question 05:</span> What is the relationship between Marcel and Celine?</div>
+      <div class="step"><span class="answer">✅ Answer:</span> (B) They are friends.</div>
+      <div class="step"><span class="explanation">🟢 Explanation:</span> In the audio, they greet each other and talk casually about life and interests.</div>
+      <div class="step"><span class="example">🔵 Example:</span> Celine says, "It’s great to see you again, my friend!"</div>
+    </div>
+  </div>
+
+  <script>
+    function showNextStep(card) {
+      const steps = card.querySelectorAll('.step');
+      for (let i = 0; i < steps.length; i++) {
+        if (!steps[i].classList.contains('visible')) {
+          steps[i].classList.add('visible');
+          break;
+        }
+      }
+    }
+  </script>
+</body>
+</html>
